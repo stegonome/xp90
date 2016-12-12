@@ -1,0 +1,10 @@
+#container{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.panel{
+  max-height: 500px;
+  overflow-y: auto;
+}

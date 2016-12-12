@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Experience récente 90 jours</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css" />
+
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/cozysdk-client.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <!-- <script src="js/jquery-handlebars-1.1.4.min.js"></script> -->
+  </head>
+
+  <body>
+
+    <div id="container">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Vos Vols</div>
+        <div class="panel-body">La liste de vos vols</div>
+        <table class="table">
+          <thead>
+            <tr id="header-row">
+              <th>#</th>
+              <th>Vol</th>
+              <th>Date</th>
+              <th>Décollage</th>
+              <th>Atterrissage</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <div class="table-body">
+            <tbody  id="flights-table" ></tbody>
+          </div>
+
+
+          </table>
+        </div>
+
+
+      <div class="panel panel-info">
+
+        <div class="panel-heading">Ajouter un vol</div>
+        <div class="panel-body"><div>
+        <table id="add-flight-table" class="table">
+          <tr>
+            <th>Vol</th>
+            <th>Date</th>
+            <th>Décollage</th>
+            <th>Atterrissage</th>
+            <th>Ajouter</th>
+          </tr>
+          <tr>
+            <td><input type="text" /></td>
+            <td><input type="date"/></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><button id="add-flight" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button></td>
+          </tr>
+
+
+
+        </table>
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+  </body>
+
+
+</html>
