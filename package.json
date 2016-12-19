@@ -1,0 +1,11 @@
+{
+  "name" : "xp90",
+  "cozy-type" : "static",
+  "cozy-displayName" : "XP90",
+  "version" : "0.1",
+  "description" : "Verifiez la validité de votre expérience récente.",
+  "icon-path" : "",
+  "cozy-permissions" : {
+    "Events" : "L'accès à votre calendrier est nécessaire pour voir vos vols."
+  }
+}

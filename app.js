@@ -6,6 +6,12 @@ $(function(){
   window.flights = flights;
   var $flightsTable = $("#flights-table");
 
+  testRun();
+
+  $("#add-flight").click(function(){
+    addFlight();
+  });
+
 
 
 
@@ -23,14 +29,12 @@ $(function(){
 
 
 
-  testRun();
-
-//  $("#test").datepicker({orientation:"right"});
+  //testRun();
 
 
 
   function populateTable(){
-    $header = $("#header-row");
+    $flightsTable.html("");
     var sortedFlights = sortByDate(flights);
     for (var i=0;i<sortedFlights.length;i++){
       var leg = sortedFlights[i].leg,
@@ -46,13 +50,13 @@ $(function(){
 
 
   function createTestObjects() {
-    flights.push(new Flight(moment.utc("2016-11-01"),"CDG-JFK",true, false));
-    flights.push(new Flight(moment.utc("2016-12-01"),"CDG-ATL",true, true));
-    flights.push(new Flight(moment.utc("2016-12-03"),"ATL-CDG",true, false));
-    flights.push(new Flight(moment.utc("2016-11-13"),"MEX-CDG",false, true));
-    flights.push(new Flight(moment.utc("2016-11-02"),"JFK-CDG",true, true));
-    flights.push(new Flight(moment.utc("2016-11-12"),"CDG-MEX",true, true));
-    flights.push(new Flight(moment.utc("2018-11-12"),"ORY-DTC",true, true));
+    flights.push(new Flight("CDG-JFK",moment.utc("2016-11-01"),true, false));
+    flights.push(new Flight("CDG-ATL",moment.utc("2016-12-01"),true, true));
+    flights.push(new Flight("ATL-CDG",moment.utc("2016-12-03"),true, false));
+    flights.push(new Flight("MEX-CDG",moment.utc("2016-11-13"),false, true));
+    flights.push(new Flight("JFK-CDG",moment.utc("2016-11-02"),true, true));
+    flights.push(new Flight("CDG-MEX",moment.utc("2016-11-12"),true, true));
+    flights.push(new Flight("ORY-DTC",moment.utc("2018-11-12"),true, true));
 
   }
 
@@ -76,7 +80,7 @@ $(function(){
   }
 
 
-  function Flight(date, leg, tkof, ldg){
+  function Flight(leg, date, tkof, ldg){
     this.date = date; //objet moment
     this.leg = leg; //String
     this.tkof = tkof; //boolean
@@ -90,6 +94,20 @@ $(function(){
     console.log(sortByDate(flights));
     populateTable();
 
+  }
+
+  function addFlight(){
+    var inputs = document.querySelectorAll("#add-flight-table input"); //[]
+    console.log(inputs);
+    var leg = inputs[0].value,
+        date = moment(inputs[1].value),
+        tkof = inputs[2].checked,
+        ldg = inputs[3].checked;
+
+    flights.push(new Flight(leg,date,tkof,ldg));
+    populateTable();
+
+        //console.log(leg,date,tkof,ldg);
   }
 
   function createFlightHTMLRow(nb, leg, date, tkof, ldg){
