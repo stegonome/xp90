@@ -7,14 +7,12 @@
 
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css" />
 
-
+    <script src="js/mustache.min.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/cozysdk-client.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
     <!-- <script src="js/jquery-handlebars-1.1.4.min.js"></script> -->
   </head>
 
@@ -24,7 +22,7 @@
 
       <div class="panel panel-primary">
         <div class="panel-heading">Vos Vols</div>
-        <div class="panel-body">La liste de vos vols</div>
+        <div class="panel-body"></div>
         <table class="table">
           <thead>
             <tr id="header-row">
@@ -39,16 +37,22 @@
           <div class="table-body">
             <tbody  id="flights-table" ></tbody>
           </div>
+        </table>
+      </div>
 
+      <div id="xpr" class="alert alert-success">
 
-          </table>
-        </div>
+      </div>
 
+      <script id="xpr-template" type="text/x-mustache">
+        <p>Votre expérience récente est valide.</p>
+        <p>Prochain mouvement: {{mvt}} avant le {{date}}</p>
+      </script>
 
       <div class="panel panel-info">
 
         <div class="panel-heading">Ajouter un vol</div>
-        <div class="panel-body"><div>
+        <div class="panel-body"></div>
         <table id="add-flight-table" class="table">
           <tr>
             <th>Vol</th>
@@ -59,22 +63,20 @@
           </tr>
           <tr>
             <td><input type="text" /></td>
-            <td><input type="date"/></td>
+            <td><input type="date" /></td>
             <td><input type="checkbox" /></td>
             <td><input type="checkbox" /></td>
-            <td><button id="add-flight" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button></td>
+            <td><button id="add-flight" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button></td>
           </tr>
-
-
-
+          <tr>
+            <td colspan="4"><span id="add-flight-status" class="label label-warning"></span></td>
+          </tr>
         </table>
-
-
-
-
       </div>
 
+
     </div>
+
 
 
 
