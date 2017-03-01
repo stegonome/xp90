@@ -5,10 +5,19 @@
 }
 
 .panel{
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: auto;
 }
 
 .error {
   border-color: red;
+}
+
+
+#cozy-flights-table tr td:first-child {
+  /*display: none;*/
+}
+
+.future {
+  background-color: gainsboro;
 }

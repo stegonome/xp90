@@ -21,7 +21,10 @@
     <div id="container">
 
       <div class="panel panel-primary">
-        <div class="panel-heading">Vos Vols</div>
+        <div class="panel-heading">
+          Vos Vols
+          <button id="db_button" class="btn btn-info">Sauvegarder dans Cozy</button>
+        </div>
         <div class="panel-body"></div>
         <table class="table">
           <thead>
@@ -50,6 +53,31 @@
       </script>
 
       <div class="panel panel-info">
+        <div class="panel-heading">Vols dans votre calendrier
+          <button id="import-from-cozy" class="btn btn-info">Importer</button>
+          <button id="delete-cozy-flights" class="btn btn-warning">Supprimer</button>
+        </div>
+        <div class="panel-body"></div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Vol</th>
+              <th>Date</th>
+              <th>Décollage</th>
+              <th>Atterrissage</th>
+              <th>Ajouter</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <tbody id="cozy-flights-table">
+
+          </tbody>
+
+        </table>
+      </div>
+
+      <div class="panel panel-info">
 
         <div class="panel-heading">Ajouter un vol</div>
         <div class="panel-body"></div>
@@ -75,8 +103,21 @@
       </div>
 
 
+
+
     </div>
 
+    <script id="cozy-flight-template" type="text/x-mustache">
+      <tr>
+        <td>{{nb}}</td>
+        <td><span>{{vol}}</span></td>
+        <td><span>{{date}}</span></td>
+        <td><input type="checkbox" /></td>
+        <td><input type="checkbox" /></td>
+        <td><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button></td>
+        <td><button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button></td>>
+      </tr>
+    </script>
 
 
 

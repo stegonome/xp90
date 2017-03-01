@@ -2,7 +2,7 @@
   "name" : "xp90",
   "cozy-type" : "static",
   "cozy-displayName" : "XP90",
-  "version" : "0.0.1",
+  "version" : "0.1.0",
   "description" : "Verifiez la validité de votre expérience récente.",
   "icon-path" : "icon.png",
   "cozy-permissions" : {
