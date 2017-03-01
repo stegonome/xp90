@@ -6,6 +6,7 @@
   "description" : "Verifiez la validité de votre expérience récente.",
   "icon-path" : "icon.png",
   "cozy-permissions" : {
-    "Event" : { "description" : "L'accès à votre calendrier est nécessaire pour voir vos vols."}
+    "Event" : { "description" : "L'accès à votre calendrier est nécessaire pour voir vos vols."},
+    "XPFlight" : {"description" : "Accès aux objets XPFlight, internes à l'application."}
   }
 }
