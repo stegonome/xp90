@@ -57,7 +57,7 @@ $(function(){
 
 
   function updateCozyFlights(){//mise à jour du data system
-
+    $("#db_button").html("Enregistrement en cours...");
     //effacer tous les vols de la période donnée et les remplacer par les nouveaux
 
      cozysdk.destroyByView("XPFlight","all",{}, function(err){//destruction
@@ -71,6 +71,7 @@ $(function(){
          });
        }
      });
+     $("#db_button").html("Sauvegarder dans Cozy");
   }
 
   function getCozyFlights(){// récupère les objets XPFLight dans le data-system
@@ -280,6 +281,7 @@ $(function(){
   }
 
   function getEventsFromCozy(){//récupérer les objets Events dans le calendrier cozy
+    $("#import-from-cozy").html("Importation...");
     var view = function(doc){//view qui renvoie les docs ayant le tag 'vol'
           if(doc.start && doc.tags && doc.tags.forEach){
               doc.tags.forEach(function(tag){
@@ -302,8 +304,18 @@ $(function(){
           cozysdk.run("Event","all",{startkey:oldest, endkey:newest},function(err,res){
             //console.log("evenements",res);
             var vols = [];//tableau intermediaire
+
             for(var i=0; i<res.length; i++){
-              vols.push(res[i].value);
+              var match = false;
+              var vol = res[i].value;
+              for(var j=0; j<flights.length; j++){
+                if(vol.description.trim() === flights[j].leg.trim() && flights[j].date.isSame(vol.start, "day") ){
+                  match = true;
+                }
+              }
+              if(!match){//si l'event cozy correspond à un vol déjà dans le tableau global (même intitulé et même date)
+                vols.push(res[i].value);//on ne l'ajoute pas.
+              }
             }
             //console.log(vols);
             cozyEvents = vols;
@@ -312,16 +324,16 @@ $(function(){
             //console.log("vols",cozyFlights);
 
             if (cozyFlights.length >= 0){
-              var template = $("#cozy-flight-template").html();
+              var template = $("#cozy-flight-template").html();//template Mustache
               for(var i=0; i<cozyFlights.length; i++){
-                var vol = cozyFlights[i].description;
-                var date = moment(cozyFlights[i].start).format("DD/MM/YYYY");
-                var rdr = Mustache.render(template,{nb:i,vol:vol,date:date});
-                var $row = $(rdr);
+                var vol = cozyFlights[i].description;// paramètres pour remplir
+                var date = moment(cozyFlights[i].start).format("DD/MM/YYYY");//le template
+                var rdr = Mustache.render(template,{nb:i,vol:vol,date:date});//rendering
+                var $row = $(rdr);//jquerysation
                 if (moment(cozyFlights[i].start).isAfter(moment.utc())){
-                  $row.addClass("future");
-                  $("input", $row).prop("disabled",true);
-                  $("button", $row).prop("disabled",true);
+                  $row.addClass("future");//si c'est un vol futur on peut le
+                  $("input", $row).prop("disabled",true);//voir mais pas l'ajouter
+                  $("button", $row).prop("disabled",true);//ni cliquer dessus
                 }
                 $cozyEventsTable.append($row);
               }
@@ -329,6 +341,7 @@ $(function(){
           });
         }
       });
+      $("#import-from-cozy").html("Importer");
 
   }
 
