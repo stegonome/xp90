@@ -42,11 +42,20 @@ $(function(){
         tkof = $(this).parent().prev().prev().children(":first").is(":checked"),
         ldg = $(this).parent().prev().children(":first").is(":checked");
 
-        $(this).parent().parent().html("");//si c'est le bouton supprimer on efface la ligne
+        if($(this).hasClass("btn-danger")){
+          $(this).parent().parent().html("");//si c'est le bouton supprimer on efface la ligne
+        }
+
         if ($(this).hasClass("btn-success")){//si c'est le bouton ajouter on ajouter le vol
-          var newFlight = new Flight(leg,date,tkof,ldg);
-          flights.push(newFlight);
-          populateTable();
+          if(tkof || ldg){//on ajoute seulement s'il y a un mouvement
+            var newFlight = new Flight(leg,date,tkof,ldg);
+            flights.push(newFlight);
+            $(this).parent().parent().html("");//on supprime la ligne.
+            $("#cozy-events-status").text("");
+            populateTable();
+          } else {
+            $("#cozy-events-status").text("Impossible d'ajouter un vol sans mouvement.");
+          }
         }
   });
 
@@ -107,6 +116,7 @@ $(function(){
     $flightsTable.html("");//reset
     flights = sortByDate(flights);//tri par date décroissante (le plus récent est [0])
     //console.log(flights);
+    flights.length = 6; //les 6 derniers vols suffisent, puisque seuls les vols avec mouvements sont comptabilisés
     for (var i=0;i<flights.length;i++){
       var leg = flights[i].leg,
           date = flights[i].date.format("DD/MM/YYYY"),
@@ -137,7 +147,7 @@ $(function(){
     } while(swapped);
 
     //suprimer les vols trop vieux
-    var oldLimit = moment().subtract(150,"days");
+    var oldLimit = moment().subtract(91,"days");
     var l=list.length;
     for (var i=0; i<l;i++){
       if (list[i].date.isBefore(oldLimit)){
@@ -168,8 +178,6 @@ $(function(){
         tkof = inputs[2].checked,
         ldg = inputs[3].checked;
 
-    $("#add-flight-table input").val("");// reset des valeurs
-
     if (leg.length > 35 || leg.length < 1){//test longueur du  nom
       $stat.text("Nom invalide");
       return;
@@ -180,7 +188,7 @@ $(function(){
       return;
     }
 
-    if (date.isBefore(moment().subtract(100,"days"))){//si vol > 100 jours, on ne l'affiche pas
+    if (date.isBefore(moment().subtract(91,"days"))){//si vol > 91 jours, on ne l'affiche pas
       $stat.text("Vol trop ancien");
       return;
     }
@@ -190,7 +198,14 @@ $(function(){
       return;
     }
 
+    if (!tkof && !ldg){//s'il n'y ni décollage, ni atterrissage, ce vol ne sert à rien.
+      $stat.text("Vol inutile pour l'expérience récente");
+      return;
+    }
+
     $stat.text("");
+    $("#add-flight-table input").val("");// reset des valeurs
+    $("#add-flight-table input").prop("checked", false);
     flights.push(new Flight(leg,date,tkof,ldg));//ajout du vol dans le tableau global
     populateTable();//m-a-j du tableau du haut
 
@@ -346,52 +361,3 @@ $(function(){
   }
 
 });
-
-
-//debug
-//
-// var cozyrot = {
-//     docType         : "event",
-//     start           : "2017-01-25",
-//     end             : "2017-01-26",
-//     place           : "DTC",
-//     details         : "rien de bien passionnant",
-//     description     : "Un évènement",
-//     rrule           : "",
-//     tags            : ["vol"],
-//     attendees       : [],
-//     related         : "",
-//     timezone        : "UTC",
-//     alarms          : [],
-//     created         : new Date().toDateString(),
-//     lastModification: "",
-// };
-//
-// cozysdk.create("Event",cozyrot,function(err,res){
-//   console.log(res.id);
-// });
-//
-// var testFlight = {
-//   leg: "CDG-ORY",
-//   date: moment.utc(),
-//   takeoff: true,
-//   landing: true
-// };
-//
-// cozysdk.create("Flight", testFlight, function(err,obj){
-//   if(err !== null){
-//     console.log("erreur ", err);
-//   } else {
-//     console.log("objet créé ", obj._id);
-//   }
-//});
-
-// function createTestObjects() {
-//   flights.push(new Flight("CDG-JFK",moment.utc("2016-11-01"),true, false));
-//   flights.push(new Flight("CDG-ATL",moment.utc("2016-12-01"),true, true));
-//   flights.push(new Flight("ATL-CDG",moment.utc("2016-12-03"),true, false));
-//   flights.push(new Flight("MEX-CDG",moment.utc("2016-11-13"),false, true));
-//   flights.push(new Flight("JFK-CDG",moment.utc("2016-11-02"),true, true));
-//   flights.push(new Flight("CDG-MEX",moment.utc("2016-11-12"),true, true));
-//   flights.push(new Flight("ORY-DTC",moment.utc("2018-11-12"),true, true));
-// }
