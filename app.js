@@ -55,6 +55,7 @@ $(function(){
             populateTable();
           } else {
             $("#cozy-events-status").text("Impossible d'ajouter un vol sans mouvement.");
+            setTimeout(function(){$("#cozy-events-status").text("");}, 2000);
           }
         }
   });
@@ -76,11 +77,18 @@ $(function(){
              console.log("impossible de créer l'objet: ", err);
            } else {
              console.log("Objet créé:", obj._id);
+             $("#db_button").removeClass("btn-info");
+             $("#db_button").addClass("btn-success");
+             $("#db_button").html("Elements enregistrés dans Cozy...");
            }
          });
        }
      });
-     $("#db_button").html("Sauvegarder dans Cozy");
+     setTimeout(function(){
+       $("#db_button").html("Sauvegarder dans Cozy");
+       $("#db_button").removeClass("btn-success");
+       $("#db_button").addClass("btn-info");
+     },3000);
   }
 
   function getCozyFlights(){// récupère les objets XPFLight dans le data-system
@@ -116,7 +124,8 @@ $(function(){
     $flightsTable.html("");//reset
     flights = sortByDate(flights);//tri par date décroissante (le plus récent est [0])
     //console.log(flights);
-    flights.length = 6; //les 6 derniers vols suffisent, puisque seuls les vols avec mouvements sont comptabilisés
+    //les 6 derniers vols suffisent, puisque seuls les vols avec mouvements sont comptabilisés
+    if (flights.length > 6)flights.length = 6 ;
     for (var i=0;i<flights.length;i++){
       var leg = flights[i].leg,
           date = flights[i].date.format("DD/MM/YYYY"),
@@ -243,7 +252,7 @@ $(function(){
     } while (tkofs.length < 3 || ldgs.length < 3);//rester dans la boucle tant qu'il y a moins de 3 decollages ou moins de 3 atteros
     //console.log(tkofs);
     //console.log(ldgs);
-    //on se retrouve avec les 3 décollaes et 3 atterrisages les plus récents du tableau global flights
+    //on se retrouve avec les 3 décollages et 3 atterrisages les plus récents du tableau global flights
     var oldestTkof = tkofs[2],
         oldestLdg = ldgs[2],
         newestTkof = tkofs[0],
@@ -259,7 +268,7 @@ $(function(){
     }
 
     if (limit.isBefore(moment(),"day")){//si la limite future est aujourd'hui...
-      noxp();//perdi
+      noxp();//perdu
       return;
     } else {
       var template = $("#xpr-template").html();
