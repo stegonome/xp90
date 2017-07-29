@@ -253,26 +253,47 @@ $(function(){
     //console.log(tkofs);
     //console.log(ldgs);
     //on se retrouve avec les 3 décollages et 3 atterrisages les plus récents du tableau global flights
-    var oldestTkof = tkofs[2],
-        oldestLdg = ldgs[2],
-        newestTkof = tkofs[0],
-        newestLdg = ldgs[0];
+    // var oldestTkof = tkofs[2],
+    //     oldestLdg = ldgs[2];
+    //
+    // var limit = oldestTkof.clone().add(89,"days");//clone est nécessaire pour ne pas muter l'objet moment initial
+    // var nextMove = "Un décollage";//on calcule la limite future d'xpr
+    // if (oldestLdg.isBefore(oldestTkof)){//si c'est un atterrissage
+    //   limit = oldestLdg.clone().add(89,"days");
+    //   nextMove = "Un atterrissage";
+    // } else if (oldestLdg.isSame(oldestTkof,"day")){//si c'est le même jour il faut une étape complète
+    //   nextMove = "Une étape complète"
+    // }
 
-    var limit = oldestTkof.clone().add(89,"days");//clone est nécessaire pour ne pas muter l'objet moment initial
-    var nextMove = "Un décollage";//on calcule la limite future d'xpr
-    if (oldestLdg.isBefore(oldestTkof)){//si c'est un atterrissage
-      limit = oldestLdg.clone().add(89,"days");
-      nextMove = "Un atterrissage";
-    } else if (oldestLdg.isSame(oldestTkof,"day")){//si c'est le même jour il faut une étape complète
-      nextMove = "Une étape complète"
+    //calcul des 3 prochains mouvements
+    function computeNextMove(tkof,ldg){
+      var limit = tkof.clone().add(89,"days");
+      var nextMove = "Un décollage";//on calcule la limite future d'xpr
+      if (ldg.isBefore(tkof)){//si c'est un atterrissage
+        limit = ldg.clone().add(89,"days");
+        nextMove = "Un atterrissage";
+      } else if (ldg.isSame(tkof,"day")){//si c'est le même jour il faut une étape complète
+        nextMove = "Une étape complète"
+      }
+      return {limit:limit,nextMove:nextMove};
     }
 
-    if (limit.isBefore(moment(),"day")){//si la limite future est aujourd'hui...
+
+    if (computeNextMove(tkofs[2],ldgs[2]).limit.isBefore(moment(),"day")){//si la limite future est aujourd'hui...
       noxp();//perdu
       return;
     } else {
       var template = $("#xpr-template").html();
-      var rdr = Mustache.render(template,{mvt:nextMove,date:limit.format("DD/MM/YYYY")});
+      var results = [null,null,null];
+      for(var i=2;i>=0;i--){
+        results[i] = computeNextMove(tkofs[i],ldgs[i]);
+        console.log(results);
+      }
+
+      var rdr = Mustache.render(template,{mvt:results[2].nextMove,date:results[2].limit.format("DD/MM/YYYY"),
+                                          mvt2:results[1].nextMove,date2:results[1].limit.format("DD/MM/YYYY"),
+                                          mvt3:results[0].nextMove,date3:results[0].limit.format("DD/MM/YYYY")
+                                        });
       $xpr.html(rdr);
       $xpr.addClass("alert-success");
       $xpr.removeClass("alert-danger");

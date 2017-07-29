@@ -45,8 +45,8 @@
 	<rotation>
 		<rotationId>ZTE5F0842</rotationId>
 		<particularite>CONTRAINTE  PLG</particularite>
-		<dureePac>11h45</dureePac>
-		<dureeRpc>68h50</dureeRpc>
+		<dureePac>13h38</dureePac>
+		<dureeRpc>68h54</dureeRpc>
 		<nbCdb>1</nbCdb>
 		<nbOpl>1</nbOpl>
 		<listPeqRot>
@@ -90,8 +90,8 @@
 						<fab>OPL</fab>
 					</peq>
 					<peq>
-						<nom>CHENEGIBERT</nom>
-						<prenom>Caroline</prenom>
+						<nom>PONCELET</nom>
+						<prenom>Philippe</prenom>
 						<fab>CCP</fab>
 					</peq>
 					<peq>
@@ -108,6 +108,11 @@
 						<nom>AUBERT</nom>
 						<prenom>Eric</prenom>
 						<fab>STW</fab>
+					</peq>
+					<peq>
+						<nom>MCKEEVERCASABUENA</nom>
+						<prenom>Laura</prenom>
+						<fab>HOT</fab>
 					</peq>
 					<peq>
 						<nom>GARUZ</nom>
@@ -133,11 +138,6 @@
 						<nom>LORENDEAUX</nom>
 						<prenom>Severine</prenom>
 						<fab>HOT</fab>
-					</peq>
-					<peq>
-						<nom>BAH</nom>
-						<prenom>Mamadou</prenom>
-						<fab>STW</fab>
 					</peq>
 					<peq>
 						<nom>PHILIPPON</nom>
@@ -214,9 +214,9 @@
 						<fab>C/C</fab>
 					</peq>
 					<peq>
-						<nom>GYSELINGS</nom>
-						<prenom>Christel</prenom>
-						<fab>HOT</fab>
+						<nom>QUESNE</nom>
+						<prenom>Bruno</prenom>
+						<fab>STW</fab>
 					</peq>
 					<peq>
 						<nom>BRIFFOD</nom>
@@ -239,6 +239,11 @@
 						<fab>HOT</fab>
 					</peq>
 					<peq>
+						<nom>DARQUE</nom>
+						<prenom>Cristelle</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
 						<nom>LEGALROUILLER</nom>
 						<prenom>Maud</prenom>
 						<fab>HOT</fab>
@@ -252,11 +257,6 @@
 						<nom>BEAU</nom>
 						<prenom>Karine</prenom>
 						<fab>HOT</fab>
-					</peq>
-					<peq>
-						<nom>BRIAND</nom>
-						<prenom>Geoffroy</prenom>
-						<fab>STW</fab>
 					</peq>
 				</listPeq>
 				<indemFrom>
@@ -320,8 +320,8 @@
 	<rotation>
 		<rotationId>ZTC7F0292</rotationId>
 		<particularite>DESIDERATA</particularite>
-		<dureePac>35h45</dureePac>
-		<dureeRpc>85h15</dureeRpc>
+		<dureePac>36h05</dureePac>
+		<dureeRpc>85h41</dureeRpc>
 		<nbCdb>1</nbCdb>
 		<nbOpl>2</nbOpl>
 		<listPeqRot>
@@ -351,8 +351,8 @@
 				<arr>23h20</arr>
 				<lagFrom>2.0</lagFrom>
 				<lagTo>9.0</lagTo>
-				<type>772</type>
-				<version>028J024W260Y</version>
+				<type>77W</type>
+				<version>038J028W252Y</version>
 				<listPeq>
 					<peq>
 						<nom>LARGE</nom>
@@ -434,7 +434,7 @@
 				</indemFrom>
 				<indemTo>
 					<monnaie>JPY (YEN)</monnaie>
-					<change>0,008</change>
+					<change>0,00805</change>
 					<ir>6422,00</ir>
 					<mf>1284,40</mf>
 					<date>01/08/12</date>
@@ -541,7 +541,7 @@
 				</listPeq>
 				<indemFrom>
 					<monnaie>JPY (YEN)</monnaie>
-					<change>0,008</change>
+					<change>0,00805</change>
 					<ir>6422,00</ir>
 					<mf>1284,40</mf>
 					<date>01/08/12</date>
@@ -579,8 +579,8 @@
 	</sol>
 	<rotation>
 		<rotationId>ZTB1F0480</rotationId>
-		<dureePac>33h05</dureePac>
-		<dureeRpc>63h50</dureeRpc>
+		<dureePac>33h35</dureePac>
+		<dureeRpc>63h41</dureeRpc>
 		<nbCdb>1</nbCdb>
 		<nbOpl>2</nbOpl>
 		<listPeqRot>
@@ -639,13 +639,8 @@
 						<fab>C/C</fab>
 					</peq>
 					<peq>
-						<nom>DUTASTABRUNEAU</nom>
-						<prenom>Caroline</prenom>
-						<fab>HOT</fab>
-					</peq>
-					<peq>
-						<nom>ANTZENBERGER</nom>
-						<prenom>Karin</prenom>
+						<nom>GAMBA</nom>
+						<prenom>Francesca</prenom>
 						<fab>HOT</fab>
 					</peq>
 					<peq>
@@ -659,9 +654,19 @@
 						<fab>HOT</fab>
 					</peq>
 					<peq>
+						<nom>VILLIEN</nom>
+						<prenom>Anne</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
 						<nom>AUBRY</nom>
 						<prenom>Stephanie</prenom>
 						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>TISSIER</nom>
+						<prenom>Clement</prenom>
+						<fab>STW</fab>
 					</peq>
 					<peq>
 						<nom>RIVA</nom>
@@ -673,6 +678,11 @@
 						<prenom>Thomas</prenom>
 						<fab>STW</fab>
 					</peq>
+					<peq>
+						<nom>DOLLA</nom>
+						<prenom>Justine</prenom>
+						<fab>HOT</fab>
+					</peq>
 				</listPeq>
 				<indemFrom>
 					<monnaie>EUR (EURO)</monnaie>
@@ -683,7 +693,7 @@
 				</indemFrom>
 				<indemTo>
 					<monnaie>PEN (NUEVO SOL)</monnaie>
-					<change>0,27246</change>
+					<change>0,274</change>
 					<ir>126,00</ir>
 					<mf>25,20</mf>
 					<date>01/06/14</date>
@@ -729,8 +739,8 @@
 						<fab>C/C</fab>
 					</peq>
 					<peq>
-						<nom>JONAS</nom>
-						<prenom>Caroline</prenom>
+						<nom>LEVYROSSO</nom>
+						<prenom>Ansophie</prenom>
 						<fab>C/C</fab>
 					</peq>
 					<peq>
@@ -744,6 +754,11 @@
 						<fab>STW</fab>
 					</peq>
 					<peq>
+						<nom>NERRIERE</nom>
+						<prenom>Laurence</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
 						<nom>JAN</nom>
 						<prenom>Sandrine</prenom>
 						<fab>HOT</fab>
@@ -754,14 +769,9 @@
 						<fab>STW</fab>
 					</peq>
 					<peq>
-						<nom>LEMARCIS</nom>
-						<prenom>Claire</prenom>
-						<fab>HOT</fab>
-					</peq>
-					<peq>
-						<nom>LANDOLFINI</nom>
-						<prenom>Marilyn</prenom>
-						<fab>HOT</fab>
+						<nom>LOPEZ</nom>
+						<prenom>Antonio</prenom>
+						<fab>STW</fab>
 					</peq>
 					<peq>
 						<nom>SOMMAIRE</nom>
@@ -771,7 +781,7 @@
 				</listPeq>
 				<indemFrom>
 					<monnaie>PEN (NUEVO SOL)</monnaie>
-					<change>0,27246</change>
+					<change>0,274</change>
 					<ir>126,00</ir>
 					<mf>25,20</mf>
 					<date>01/06/14</date>
@@ -807,18 +817,232 @@
 		<code>RBR</code>
 		<intitule>RESERVE</intitule>
 	</sol>
-	<sol>
-		<date>30/07</date>
-		<debut>00h00</debut>
-		<fin>23h59</fin>
-		<code>DSP</code>
-		<intitule>DISPERSION</intitule>
-	</sol>
-	<sol>
-		<date>31/07</date>
-		<debut>00h00</debut>
-		<fin>23h59</fin>
-		<code>DSP</code>
-		<intitule>DISPERSION</intitule>
-	</sol>
+	<rotation>
+		<rotationId>ZTE7F0820</rotationId>
+		<dureePac>35h30</dureePac>
+		<dureeRpc>66h45</dureeRpc>
+		<nbCdb>1</nbCdb>
+		<nbOpl>2</nbOpl>
+		<listPeqRot>
+			<peqRot>
+				<nom>GABRIELE</nom>
+				<prenom>Andree</prenom>
+				<fab>CDB</fab>
+			</peqRot>
+			<peqRot>
+				<nom>COLAS</nom>
+				<prenom>Gilles</prenom>
+				<fab>OPL</fab>
+			</peqRot>
+			<peqRot>
+				<nom>SIGNORET</nom>
+				<prenom>Denis</prenom>
+				<fab>OPL</fab>
+			</peqRot>
+		</listPeqRot>
+		<sv>
+			<date>30/07</date>
+			<vol>
+				<numVol>AF 820</numVol>
+				<from>CDG</from>
+				<to>HAV</to>
+				<dep>11h15</dep>
+				<arr>21h15</arr>
+				<lagFrom>2.0</lagFrom>
+				<lagTo>-4.0</lagTo>
+				<type>772</type>
+				<version>028C024W260M</version>
+				<listPeq>
+					<peq>
+						<nom>GABRIELE</nom>
+						<prenom>Andree</prenom>
+						<fab>CDB</fab>
+					</peq>
+					<peq>
+						<nom>COLAS</nom>
+						<prenom>Gilles</prenom>
+						<fab>OPL</fab>
+					</peq>
+					<peq>
+						<nom>SIGNORET</nom>
+						<prenom>Denis</prenom>
+						<fab>OPL</fab>
+					</peq>
+					<peq>
+						<nom>SUCHETET</nom>
+						<prenom>Odile</prenom>
+						<fab>CCP</fab>
+					</peq>
+					<peq>
+						<nom>BAGES</nom>
+						<prenom>Patrick</prenom>
+						<fab>C/C</fab>
+					</peq>
+					<peq>
+						<nom>SONNECK</nom>
+						<prenom>Marc</prenom>
+						<fab>C/C</fab>
+					</peq>
+					<peq>
+						<nom>BARRAULAVAUD</nom>
+						<prenom>Claire</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>VOLANT</nom>
+						<prenom>Richard</prenom>
+						<fab>STW</fab>
+					</peq>
+					<peq>
+						<nom>FERRET</nom>
+						<prenom>Severine</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>BRUSSIAUD</nom>
+						<prenom>Coralie</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>PERILLIER</nom>
+						<prenom>Jerome</prenom>
+						<fab>STW</fab>
+					</peq>
+					<peq>
+						<nom>CHAMOIN</nom>
+						<prenom>Roxane</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>PUAUD</nom>
+						<prenom>Alicia</prenom>
+						<fab>HOT</fab>
+					</peq>
+				</listPeq>
+				<indemFrom>
+					<monnaie>EUR (EURO)</monnaie>
+					<change>1</change>
+					<ir>18,40</ir>
+					<mf>3,68</mf>
+					<date>01/01/17</date>
+				</indemFrom>
+				<indemTo>
+					<monnaie>CUP (PESO CUBAIN)</monnaie>
+					<change>0,89576</change>
+					<ir>19,00</ir>
+					<mf>3,80</mf>
+					<date>01/06/16</date>
+				</indemTo>
+				<listRecoDeg>
+					<recoDeg>
+						<deg>CUN</deg>
+						<categorie>B</categorie>
+					</recoDeg>
+					<recoDeg>
+						<deg>KIN</deg>
+						<categorie>B</categorie>
+					</recoDeg>
+					<recoDeg>
+						<deg>MIA</deg>
+						<categorie>B</categorie>
+					</recoDeg>
+				</listRecoDeg>
+			</vol>
+		</sv>
+		<sv>
+			<date>31/07</date>
+			<vol>
+				<numVol>AF 825</numVol>
+				<from>HAV</from>
+				<to>CDG</to>
+				<dep>23h40</dep>
+				<arr>08h45</arr>
+				<lagFrom>-4.0</lagFrom>
+				<lagTo>2.0</lagTo>
+				<type>772</type>
+				<version>028C024W260M</version>
+				<listPeq>
+					<peq>
+						<nom>GABRIELE</nom>
+						<prenom>Andree</prenom>
+						<fab>CDB</fab>
+					</peq>
+					<peq>
+						<nom>COLAS</nom>
+						<prenom>Gilles</prenom>
+						<fab>OPL</fab>
+					</peq>
+					<peq>
+						<nom>SIGNORET</nom>
+						<prenom>Denis</prenom>
+						<fab>OPL</fab>
+					</peq>
+					<peq>
+						<nom>SUCHETET</nom>
+						<prenom>Odile</prenom>
+						<fab>CCP</fab>
+					</peq>
+					<peq>
+						<nom>BAGES</nom>
+						<prenom>Patrick</prenom>
+						<fab>C/C</fab>
+					</peq>
+					<peq>
+						<nom>SONNECK</nom>
+						<prenom>Marc</prenom>
+						<fab>C/C</fab>
+					</peq>
+					<peq>
+						<nom>BARRAULAVAUD</nom>
+						<prenom>Claire</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>VOLANT</nom>
+						<prenom>Richard</prenom>
+						<fab>STW</fab>
+					</peq>
+					<peq>
+						<nom>FERRET</nom>
+						<prenom>Severine</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>BRUSSIAUD</nom>
+						<prenom>Coralie</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>PERILLIER</nom>
+						<prenom>Jerome</prenom>
+						<fab>STW</fab>
+					</peq>
+					<peq>
+						<nom>CHAMOIN</nom>
+						<prenom>Roxane</prenom>
+						<fab>HOT</fab>
+					</peq>
+					<peq>
+						<nom>PUAUD</nom>
+						<prenom>Alicia</prenom>
+						<fab>HOT</fab>
+					</peq>
+				</listPeq>
+				<indemFrom>
+					<monnaie>CUP (PESO CUBAIN)</monnaie>
+					<change>0,89576</change>
+					<ir>19,00</ir>
+					<mf>3,80</mf>
+					<date>01/06/16</date>
+				</indemFrom>
+				<indemTo>
+					<monnaie>EUR (EURO)</monnaie>
+					<change>1</change>
+					<ir>18,40</ir>
+					<mf>3,68</mf>
+					<date>01/01/17</date>
+				</indemTo>
+			</vol>
+		</sv>
+	</rotation>
 </planning>
