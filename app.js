@@ -125,7 +125,7 @@ $(function(){
     flights = sortByDate(flights);//tri par date décroissante (le plus récent est [0])
     //console.log(flights);
     //les 6 derniers vols suffisent, puisque seuls les vols avec mouvements sont comptabilisés
-    if (flights.length > 6)flights.length = 6 ;
+  //  if (flights.length > 6)flights.length = 6 ;
     for (var i=0;i<flights.length;i++){
       var leg = flights[i].leg,
           date = flights[i].date.format("DD/MM/YYYY"),
